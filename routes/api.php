@@ -55,7 +55,7 @@ Route::get('/limiter', new class {
     public function __invoke(ServerRequestInterface $request, $next) {
 
         // 立即 429
-        // if (!$this->limiterConcurrent->tryAcquire(1)) {
+        // if (!$this->limiterConcurrent->tryRemoveTokens(1)) {
         //     return new Response(429, [], 'Too many requests');
         // }
         // return $next($request);
